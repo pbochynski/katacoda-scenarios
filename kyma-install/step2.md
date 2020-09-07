@@ -32,6 +32,13 @@ echo $INGRESS_PORT
 echo $SECURE_INGRESS_PORT
 ```{{execute}}
 
+Gateway URL: 
+`echo [[HOST_SUBDOMAIN]]-$INGRESS_PORT-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+
+Bookinfo app:
+`echo http://"$GATEWAY_URL/productpage"`{{execute}}
+
+
 ## Install charts
 
 ```
