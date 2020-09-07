@@ -4,9 +4,6 @@ Install helm 3:
 `curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash`{{execute}}
 
 Install helm-git plugin:
-
-`export HELM_HOME=~/.helm`{{execute}}
-`mkdir -p $HELM_HOME/plugins`{{execute}}
 `helm plugin install https://github.com/aslafy-z/helm-git --version 0.8.1`{{execute}}
 
 Add Kyma repo:
@@ -24,5 +21,3 @@ kubectl create ns natss
 kubectl create ns kyma-installer
 ```{{execute}}
 
-Label namespace:
-`kubectl label ns istio-system istio-injection=disabled --overwrite`{{execute}}
