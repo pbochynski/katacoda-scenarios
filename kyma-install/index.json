@@ -24,6 +24,12 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "controlnode": [
+          {"file": "cert-job.yaml", "target": "/root/" },
+          {"file": "certificate.tpl", "target": "/root/" }
+      ]
     }
   },
   "environment": {
