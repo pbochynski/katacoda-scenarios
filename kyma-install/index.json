@@ -26,7 +26,7 @@
       "text": "finish.md"
     },
     "assets": {
-      "controlnode": [
+      "host01": [
           {"file": "cert-job.yaml", "target": "/root/" },
           {"file": "certificate.tpl", "target": "/root/" }
       ]
