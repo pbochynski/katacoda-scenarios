@@ -41,8 +41,6 @@ kubectl create ns knative-eventing
 kubectl create ns natss
 kubectl create ns cert-manager
 
-helm upgrade -i cluster-essentials resources/cluster-essentials -n kyma-system &
-helm upgrade -i testing resources/testing -n kyma-system &
 
 echo "Installing istio ctl"
 curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.0 sh -
@@ -84,3 +82,5 @@ EOF
 sed "s/DOMAIN/$DOMAIN/" certificate.tpl >certificate.yaml
 kubectl apply -f certificate.yaml
 
+helm upgrade -i cluster-essentials resources/cluster-essentials -n kyma-system 
+helm upgrade -i testing resources/testing -n kyma-system 
