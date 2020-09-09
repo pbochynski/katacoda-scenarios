@@ -53,7 +53,6 @@ export OVERRIDES=global.isLocalEnv=false,global.ingress.domainName=$DOMAIN,globa
 export ORY=global.ory.hydra.persistence.enabled=false,global.ory.hydra.persistence.postgresql.enabled=false,hydra.hydra.autoMigrate=false
 
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.0.1/cert-manager.yaml
-
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
 kind: Issuer
@@ -80,7 +79,8 @@ spec:
 EOF
 
 sed "s/DOMAIN/$DOMAIN/" certificate.tpl >certificate.yaml
-kubectl apply -f certificate.yaml
 
 helm upgrade -i cluster-essentials resources/cluster-essentials -n kyma-system 
 helm upgrade -i testing resources/testing -n kyma-system 
+
+kubectl apply -f certificate.yaml
