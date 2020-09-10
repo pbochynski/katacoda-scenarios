@@ -1,4 +1,4 @@
-## Install istio
+# Download Kyma charts
 
 ```
 curl -L https://istio.io/downloadIstio | sh -
@@ -33,10 +33,10 @@ echo $SECURE_INGRESS_PORT
 ```{{execute}}
 
 Gateway URL: 
-`echo [[HOST_SUBDOMAIN]]-$INGRESS_PORT-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+`GATEWAY_URL=[[HOST_SUBDOMAIN]]-$INGRESS_PORT-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
 Bookinfo app:
-`echo http://"$GATEWAY_URL/productpage"`{{execute}}
+`echo https://"$GATEWAY_URL/productpage"`{{execute}}
 
 
 ## Install charts
@@ -44,4 +44,10 @@ Bookinfo app:
 ```
 helm upgrade -i cluster-essentials kyma/cluster-essentials -n kyma-system &
 helm upgrade -i testing kyma/testing -n kyma-system &
+helm upgrade -i dex resources/dex --set $OVERRIDES -n kyma-system 
+helm upgrade -i core resources/core --set $OVERRIDES -n kyma-system 
+helm upgrade -i console resources/console --set $OVERRIDES -n kyma-system 
+helm upgrade -i cluster-users resources/cluster-users --set $OVERRIDES -n kyma-system 
+helm upgrade -i apiserver-proxy resources/apiserver-proxy --set $OVERRIDES -n kyma-system 
+helm upgrade -i api-gateway resources/api-gateway --set $OVERRIDES -n kyma-system 
 ```{{execute}}

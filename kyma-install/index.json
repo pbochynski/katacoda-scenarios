@@ -28,8 +28,9 @@
     "assets": {
       "host01": [
           {"file": "cert-job.yaml", "target": "/root/" },
-          {"file": "certificate.tpl", "target": "/root/" }
-          {"file": "kyma-install.sh", "target": "/root/", "chmod": "+x" }
+          {"file": "certificate.tpl", "target": "/root/" },
+          {"file": "kyma-init.sh", "target": "/root/", "chmod": "+x" },
+          {"file": "download-kyma-charts.sh", "target": "/root/", "chmod": "+x" }
       ]
     }
   },
