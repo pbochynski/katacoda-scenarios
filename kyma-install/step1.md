@@ -1,11 +1,4 @@
 
-Init script will install:
-- Helm 3
-- Cert-manager
-- Istio 1.7.0
-
-and will download Kyma charts to resources folder.
-
 # Create namespaces
 
 ```
@@ -24,7 +17,7 @@ kubectl label namespace kyma-integration istio-injection=enabled --overwrite
 export HOST_IP=[[HOST_IP]]
 export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
 export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
-export DOMAIN=[[HOST_IP]].xip.io
+export DOMAIN=[[HOST_SUBDOMAIN]]-$INGRESS_PORT-[[KATACODA_HOST]].environments.katacoda.com
 export OVERRIDES=global.isLocalEnv=false,global.ingress.domainName=$DOMAIN,global.environment.gardener=false,global.domainName=$DOMAIN,global.tlsCrt=ZHVtbXkK
 export ORY=global.ory.hydra.persistence.enabled=false,global.ory.hydra.persistence.postgresql.enabled=false,hydra.hydra.autoMigrate=false
 ```{{execute}}
@@ -34,12 +27,4 @@ export ORY=global.ory.hydra.persistence.enabled=false,global.ory.hydra.persisten
 ```
 helm upgrade -i cluster-essentials resources/cluster-essentials -n kyma-system
 helm upgrade -i testing resources/testing -n kyma-system
-```{{execute}}
-
-# Request certificate
-
-```
-sed "s/DOMAIN/$DOMAIN/" certificate.tpl >certificate.yaml
-kubectl apply -f certificate.yaml
-kubectl apply -f cert-job.yaml
 ```{{execute}}

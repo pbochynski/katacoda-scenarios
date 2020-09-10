@@ -1,5 +1,5 @@
 {
-  "title": "Kyma API Gateway",
+  "title": "Kyma Serverless",
   "description": "",
   "difficulty": "Beginner",
   "time": "15",
@@ -27,7 +27,6 @@
     },
     "assets": {
       "host01": [
-          {"file": "example.yaml", "target": "/root/" },
           {"file": "download-kyma-charts.sh", "target": "/root/", "chmod": "+x" }
       ]
     }
