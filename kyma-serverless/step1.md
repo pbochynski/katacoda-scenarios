@@ -2,9 +2,17 @@
 
 ```
 export USERNAME=
-export EMAIL=
 export PASSWORD=
 ```
+
+You can use access key instead of password. You can get it in few simple steps:
+- log in to [hub.docker.com](https://hub.docker.com)
+- open Account Settings and enter Security section
+- click "New Access Token" button
+- provide description (e.g. katacoda) and press "Create"
+- copy the access token and assign it to PASSWORD environment variable
+
+You can delete the access token when you finish the tutorial.
 
 # Configure serverless module
 
