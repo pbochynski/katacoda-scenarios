@@ -17,18 +17,11 @@ spec:
 EOF
 ```{{execute}}
 
-# Expose function on port 8080
+# Expose function on port 8080 
 
 ```
+echo "Open https://$DOMAIN in your browser"
 k port-forward --address 0.0.0.0 svc/hello 8080:80
 ```{{execute}}
-
-# Call function from your browser
-
-Execute this command to get function URL:
-```
-echo https://$DOMAIN
-```{{execute}}
-
 
 
