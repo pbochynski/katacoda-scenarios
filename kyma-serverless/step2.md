@@ -6,7 +6,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: serverless.kyma-project.io/v1alpha1
 kind: Function
 metadata:
-  name: hello6
+  name: hello
 spec:
   source: |
     module.exports = {
