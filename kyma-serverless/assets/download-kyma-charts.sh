@@ -30,3 +30,4 @@ rm resources/service-catalog/charts/catalog/templates/webhook-policy.yaml
 rm resources/service-catalog-addons/charts/service-binding-usage-controller/templates/policy.yaml
 rm resources/application-connector/charts/connector-service/templates/service-role*.yaml
 rm resources/application-connector/charts/application-broker/templates/istio-rbac.yaml
+rm resources/serverless/templates/destination-rule.yaml
