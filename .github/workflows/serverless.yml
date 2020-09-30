@@ -18,8 +18,8 @@ jobs:
         else
           echo "starting cluster"
           curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=777 sh -
-          cat /etc/rancher/k3s/k3s.yaml
           cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+          while [[ $(kubectl get nodes -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "Waiting for cluster nodes to be ready"; sleep 2; done
         fi
     - name: example tests
       env:
