@@ -11,7 +11,7 @@ jobs:
     - name: install k8s
       run: |
         mkdir -p ~/.kube
-        if [[ ! -f ./kubeconfig ]];
+        if [[ -f ./kubeconfig ]];
         then
           echo "use existing kubeconfig"
           cp ./kubeconfig ~/.kube/config
