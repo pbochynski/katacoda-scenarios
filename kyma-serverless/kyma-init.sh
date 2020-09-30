@@ -1,14 +1,17 @@
-echo "Wait for Kubernetes to be ready"
-launch.sh
 
 echo "Installing helm"
-curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+curl -s https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
-echo "Download Kyma charts"
-./download-kyma-charts.sh
+echo "Downloading kyma charts from master"
+curl -s https://codeload.github.com/kyma-project/kyma/zip/master --output kyma-master.zip
+unzip -qq kyma-master.zip kyma-master/resources/*
+rm -rf ./resources
+mv kyma-master/resources .
+rm -Rf ./kyma-master*
+rm resources/serverless/templates/destination-rule.yaml
 
 echo "Install CRDs"
 kubectl create ns kyma-system
-helm upgrade -i cluster-essentials resources/cluster-essentials -n kyma-system
+kubectl apply -f resources/cluster-essentials/files
 
 

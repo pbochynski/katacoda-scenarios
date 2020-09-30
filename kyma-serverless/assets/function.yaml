@@ -1,0 +1,11 @@
+apiVersion: serverless.kyma-project.io/v1alpha1
+kind: Function
+metadata:
+  name: hello
+spec:
+  source: |
+    module.exports = {
+      main: function(event, context) {
+        return 'Hello World!'
+      }
+    }

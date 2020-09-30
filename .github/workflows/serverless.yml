@@ -1,0 +1,36 @@
+name: Test serverless on k3s
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - uses: actions/checkout@v2
+    - name: install k8s
+      run: |
+        mkdir -p ~/.kube
+        if [[ -z ./kubeconfig ]]
+        then
+          echo "starting cluster"
+          curl -sfL https://get.k3s.io | K3S_KUBECONFIG_MODE=777 sh -
+          cat /etc/rancher/k3s/k3s.yaml
+          cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+        else
+          echo "use existing kubeconfig"
+          cp ./kubeconfig ~/.kube/config
+        fi
+    - name: example tests
+      env:
+        REGISTRY_USER: ${{ github.actor }}
+        REGISTRY_PASS: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        cd kyma-serverless
+        bash ./kyma-init.sh
+        export SERVER_ADDRESS=ghcr.io
+        export REGISTRY_VALUES="dockerRegistry.username=$REGISTRY_USER,dockerRegistry.password=$REGISTRY_PASS,dockerRegistry.enableInternal=false,dockerRegistry.serverAddress=$SERVER_ADDRESS,dockerRegistry.registryAddress=$SERVER_ADDRESS/$REGISTRY_USER"       
+        helm upgrade -i serverless resources/serverless --set $REGISTRY_VALUES -n kyma-system
+        kubectl wait --for condition=Ready=True pod -n kyma-system -l app=serverless
+        kubectl apply -f assets/function.yaml
+        bash assets/wait-for-svc.sh

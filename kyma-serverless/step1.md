@@ -1,16 +1,16 @@
-# Provide your docker.io credentials
+# Provide your Github Container Registry credentials
 
 ```
-export USERNAME=
-export PASSWORD=
+export REGISTRY_USER=
+export REGISTRY_PASS=
 ```
 
-You can use access key instead of password. You can get it in few simple steps:
-- log in to [hub.docker.com](https://hub.docker.com)
-- open Account Settings and enter Security section
-- click "New Access Token" button
-- provide description (e.g. katacoda) and press "Create"
-- copy the access token and assign it to PASSWORD environment variable
+As registry user provide your github handle, as registry pass your github token. You can get new one from 
+- log in to [github].com](https://github.com)
+- open Account Settings, go to Developer Security and enter Personal access tokens section
+- click "Generate new token" button
+- provide notes (e.g. katacoda), select write:packages scope and press "Generate token" button
+- copy the access token and assign it to REGISTRY_PASS environment variable
 
 You can delete the access token when you finish the tutorial.
 
@@ -18,9 +18,8 @@ You can delete the access token when you finish the tutorial.
 
 ```
 export DOMAIN=[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
-export SERVER_ADDRESS=https://index.docker.io/v1/
-export REGISTRY_ADDRESS=$USERNAME
-export REGISTRY_VALUES="dockerRegistry.username=$USERNAME,dockerRegistry.password=$PASSWORD,dockerRegistry.enableInternal=false,dockerRegistry.serverAddress=$SERVER_ADDRESS,dockerRegistry.registryAddress=$REGISTRY_ADDRESS"
+export SERVER_ADDRESS=ghcr.io
+export REGISTRY_VALUES="dockerRegistry.username=$REGISTRY_USER,dockerRegistry.password=$REGISTRY_PASS,dockerRegistry.enableInternal=false,dockerRegistry.serverAddress=$SERVER_ADDRESS,dockerRegistry.registryAddress=$SERVER_ADDRESS/$REGISTRY_USER"       
 ```{{execute}}
 
 
