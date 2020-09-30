@@ -7,10 +7,6 @@
     "steps": [
       {
         "title": "Prepare cluster",
-        "text": "prepare.md"
-      },
-      {
-        "title": "Prepare cluster",
         "text": "step1.md"
       },
       {
