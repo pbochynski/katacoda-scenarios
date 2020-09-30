@@ -23,8 +23,8 @@ jobs:
         fi
     - name: example tests
       env:
-        REGISTRY_USER: ${{ github.actor }}
-        REGISTRY_PASS: ${{ secrets.GITHUB_TOKEN }}
+        REGISTRY_USER: ${{ secrets.REGISTRY_PASS }}
+        REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
       run: |
         cd kyma-serverless
         bash ./kyma-init.sh
