@@ -23,7 +23,7 @@ jobs:
         fi
     - name: example tests
       env:
-        REGISTRY_USER: ${{ secrets.REGISTRY_PASS }}
+        REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
         REGISTRY_PASS: ${{ secrets.REGISTRY_PASS }}
       run: |
         cd kyma-serverless
