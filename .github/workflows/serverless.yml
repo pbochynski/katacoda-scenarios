@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: self-hosted
-    timeout-minutes: 5
+    timeout-minutes: 3
     steps:
     - uses: actions/checkout@v2
     - name: install k8s
