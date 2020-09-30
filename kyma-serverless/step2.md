@@ -5,9 +5,11 @@
 
 # Wait until funtion is deployed
 
-You should see hello-build pod created in default namespace - it builds a docker container with your function. When it is completed the new pod hello containing the function.
+You should see hello-build pod created in default namespace - it builds a docker container with your function. When it is completed the new pod hello containing the function. Check the pods: 
 
 `kubectl get pods`{{execute}}
+
+Repeat the command until you see hello pod in running state.
 
 
 # Expose function on port 8080 
