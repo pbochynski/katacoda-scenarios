@@ -30,6 +30,7 @@ jobs:
         bash ./kyma-init.sh
         export SERVER_ADDRESS=ghcr.io
         export REGISTRY_VALUES="dockerRegistry.username=$REGISTRY_USER,dockerRegistry.password=$REGISTRY_PASS,dockerRegistry.enableInternal=false,dockerRegistry.serverAddress=$SERVER_ADDRESS,dockerRegistry.registryAddress=$SERVER_ADDRESS/$REGISTRY_USER"       
+        echo $REGISTRY_VALUES
         helm upgrade -i serverless resources/serverless --set $REGISTRY_VALUES -n kyma-system
         kubectl wait --for condition=Ready=True pod -n kyma-system -l app=serverless
         sleep 10
