@@ -33,6 +33,5 @@ jobs:
         echo $REGISTRY_VALUES
         helm upgrade --wait -i serverless resources/serverless --set $REGISTRY_VALUES -n kyma-system
         kubectl wait --for condition=Ready=True pod -n kyma-system -l app=serverless
-        sleep 10
         kubectl apply -f assets/function.yaml
         bash assets/wait-for-function.sh

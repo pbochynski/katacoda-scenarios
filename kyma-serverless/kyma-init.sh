@@ -13,5 +13,6 @@ rm resources/serverless/templates/destination-rule.yaml
 echo "Install CRDs"
 kubectl create ns kyma-system
 kubectl apply -f resources/cluster-essentials/files
+kubectl wait --for condition=established --timeout=20s crd/usagekinds.servicecatalog.kyma-project.io
 
 
