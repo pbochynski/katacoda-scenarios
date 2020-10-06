@@ -29,7 +29,7 @@ jobs:
         cd kyma-serverless
         bash ./kyma-init.sh
         export REGISTRY_VALUES="dockerRegistry.username=$REGISTRY_USER,dockerRegistry.password=$REGISTRY_PASS,dockerRegistry.enableInternal=false,dockerRegistry.serverAddress=ghcr.io,dockerRegistry.registryAddress=ghcr.io/$REGISTRY_USER"       
+        kubectl apply -f assets/function.yaml
         helm upgrade --wait -i serverless resources/serverless --set $REGISTRY_VALUES -n kyma-system
         kubectl wait --for condition=Ready=True pod -n kyma-system -l app=serverless
-        kubectl apply -f assets/function.yaml
         bash assets/wait-for-function.sh
