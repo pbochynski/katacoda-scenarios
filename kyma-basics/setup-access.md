@@ -15,10 +15,10 @@ apiVersion: v1
 clusters:
 - cluster:
     server: https://[[HOST_SUBDOMAIN]]-8001-[[KATACODA_HOST]].environments.katacoda.com
-  name: kubernetes
+  name: kyma-katacoda
 contexts:
 - context:
-    cluster: kubernetes
+    cluster: kyma-katacoda
     user: kubernetes-admin
   name: kubernetes-admin@kubernetes
 current-context: kubernetes-admin@kubernetes
@@ -31,6 +31,6 @@ users:
 ```
 
 Open Kyma console (busola) in the new window:
-[https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/](https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/)
+[https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/cluster/add](https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/cluster/add)
 
 And paste the kubeconfig.
