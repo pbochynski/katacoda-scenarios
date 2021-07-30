@@ -1,5 +1,3 @@
-
-
 # Checkout Kyma
 
 Open a new terminal. 
@@ -26,7 +24,7 @@ Generate doocker config json (base64 encoded):
 export DOCKERCONFIGJSON=$(kubectl create secret docker-registry tmp \
 --docker-server=${SERVER_ADDRESS} --docker-username=${USERNAME} \
 --docker-password=${PASSWORD} --dry-run=client -o jsonpath='{.data.\.dockerconfigjson}')
-```
+```{{execute}}
 
 Create a secret for container registry credentials:
 ```
@@ -50,17 +48,58 @@ EOF
 
 # Install Kyma components
 
-Install istio, api-gateway and serverless components from Kyma:
+Install serverless component from Kyma:
 ```
 export DEBUG=true
-./kyma.js install --components istio,api-gateway,serverless --use-helm-template
+./kyma.js install --components serverless --use-helm-template
 ```{{execute}}
 
 
 # Create serverless function
 
-Go to busola and create function with a name test. Check when the deployment is in the state ready
+Go to busola, expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
+Now create a new function with a name `test`. 
+If you don't want to use UI you can create function with kubectl:
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: serverless.kyma-project.io/v1alpha1
+kind: Function
+metadata:
+  name: test
+spec:
+  buildResources:
+    limits:
+      cpu: 700m
+      memory: 700Mi
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  deps: |-
+    { 
+      "name": "test",
+      "version": "1.0.0",
+      "dependencies": {}
+    }
+  maxReplicas: 1
+  minReplicas: 1
+  resources:
+    limits:
+      cpu: 25m
+      memory: 32Mi
+    requests:
+      cpu: 10m
+      memory: 16Mi
+  runtime: nodejs14
+  source: |-
+    module.exports = { 
+      main: function (event, context) {
+        return "Hello World!";
+      }
+    }
+EOF
+```{{execute}}
 
+Check when the deployment is in the state ready. 
 ```
 kubectl get deployment
 ```
