@@ -12,6 +12,10 @@
       {
         "title": "Set up cluster access",
         "text": "setup-access.md"
+      },
+      {
+        "title": "Deploy hello world container",
+        "text": "deploy-container.md"
       }
     ],
     "intro": {
