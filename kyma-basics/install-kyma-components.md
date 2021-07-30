@@ -1,14 +1,17 @@
 
 
-# Install serverless
+# Checkout Kyma
 
 Open a new terminal. 
+
+Checkout kyma repository and build kyma.js utility:
 ```
 git clone https://github.com/kyma-project/kyma.git
 cd kyma/tests/fast-integration/
 npm install
 ```{{execute}}
 
+# Configure your docker registry
 
 Provide your container registry credentials as environment variables. Example for docker hub:
 ```
@@ -18,17 +21,26 @@ export SERVER_ADDRESS=https://index.docker.io/v1/
 export REGISTRY_ADDRESS=kyma-rocks
 ```
 
+Generate doocker config json (base64 encoded):
+```
+export DOCKERCONFIGJSON=$(kubectl create secret docker-registry tmp \
+--docker-server=${SERVER_ADDRESS} --docker-username=${USERNAME} \
+--docker-password=${PASSWORD} --dry-run=client -o jsonpath='{.data.\.dockerconfigjson}')
+```
+
 Create a secret for container registry credentials:
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
+type: kubernetes.io/dockerconfigjson
 metadata:
  name: serverless-registry-config
  namespace: default
  labels:
    serverless.kyma-project.io/remote-registry: config
-data:
+data: 
+ .dockerconfigjson: ${DOCKERCONFIGJSON}
  username: $(echo -n "${USERNAME}" | base64)
  password: $(echo -n "${PASSWORD}" | base64)
  serverAddress: $(echo -n "${SERVER_ADDRESS}" | base64)
@@ -36,10 +48,16 @@ data:
 EOF
 ```{{execute}}
 
+# Install Kyma components
+
 Install istio, api-gateway and serverless components from Kyma:
 ```
+export DEBUG=true
 ./kyma.js install --components istio,api-gateway,serverless --use-helm-template
 ```{{execute}}
+
+
+# Create serverless function
 
 Go to busola and create function with a name test. Check when the deployment is in the state ready
 
