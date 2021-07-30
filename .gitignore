@@ -1,2 +1,3 @@
 docker-secret.yaml
 local-ci.sh
+*/.env.sh
