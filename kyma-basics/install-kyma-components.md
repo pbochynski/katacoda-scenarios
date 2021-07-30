@@ -37,7 +37,7 @@ EOF
 
 # Create serverless function
 
-Go to [Busola](https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/cluster/kyma-katacoda/namespaces/default/functions), expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
+Go to [Busola](https://dashboard.dev.kyma.cloud.sap/cluster/kyma-katacoda/namespaces/default/functions), expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
 Now create a new function with a name `test`. 
 If you don't want to use UI you can create function with kubectl:
 ```

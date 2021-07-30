@@ -27,6 +27,6 @@ users:
 ```{{copy}}
 
 Open Kyma console (busola) in the new window:
-[https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/clusters/add](https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/clusters/add)
+[https://dashboard.dev.kyma.cloud.sap/clusters/add](https://dashboard.dev.kyma.cloud.sap/clusters/add)
 
 And paste the kubeconfig.
