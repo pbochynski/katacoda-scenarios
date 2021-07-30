@@ -1,6 +1,7 @@
 Before you create your first function you need to:
 - configure your container registry
 - install serverless component
+
 # Configure your container registry (docker hub example)
 
 Provide your container registry credentials as environment variables like in this example:
