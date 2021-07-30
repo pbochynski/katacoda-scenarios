@@ -1,8 +1,4 @@
 
-
-# Set environment variables
-
-
 Execute the command:
 ```
 kubectl proxy --address='0.0.0.0' --accept-hosts='.*'

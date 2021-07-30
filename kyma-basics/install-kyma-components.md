@@ -1,17 +1,9 @@
-# Checkout Kyma
+Before you create your first function you need to:
+- configure your container registry
+- install serverless component
+# Configure your container registry (docker hub example)
 
-Open a new terminal. 
-
-Checkout kyma repository and build kyma.js utility:
-```
-git clone https://github.com/kyma-project/kyma.git
-cd kyma/tests/fast-integration/
-npm install
-```{{execute}}
-
-# Configure your docker registry
-
-Provide your container registry credentials as environment variables. Example for docker hub:
+Provide your container registry credentials as environment variables like in this example:
 ```
 export USERNAME=kyma-rocks
 export PASSWORD=admin123
@@ -46,18 +38,21 @@ data:
 EOF
 ```{{execute}}
 
-# Install Kyma components
+# Install serverless component
 
-Install serverless component from Kyma:
+Open a new terminal. 
+Checkout kyma repository, build kyma.js utility, and use it to install serverless component:
 ```
+git clone https://github.com/kyma-project/kyma.git
+cd kyma/tests/fast-integration/
+npm install
 export DEBUG=true
 ./kyma.js install --components serverless --use-helm-template
 ```{{execute}}
 
-
 # Create serverless function
 
-Go to busola, expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
+Go to [Busola](https://busola.main.hasselhoff.shoot.canary.k8s-hana.ondemand.com/cluster/kyma-katacoda/namespaces/default/functions), expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
 Now create a new function with a name `test`. 
 If you don't want to use UI you can create function with kubectl:
 ```
@@ -99,10 +94,11 @@ spec:
 EOF
 ```{{execute}}
 
-Check when the deployment is in the state ready. 
+Wait until the pod for building the function is in the state completed and function deployment is ready. Check the state with this command:
 ```
-kubectl get deployment
-```
+kubectl get pods
+kubectl get deployments
+```{{execute}}
 
 Expose function on port 6000:
 ```

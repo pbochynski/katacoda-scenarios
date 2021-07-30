@@ -10,7 +10,7 @@
         "text": "prepare.md"
       },
       {
-        "title": "Set up cluster access",
+        "title": "Connect to the cluster with Kyma UI (Busola)",
         "text": "setup-access.md"
       },
       {
@@ -18,7 +18,7 @@
         "text": "deploy-container.md"
       },      
       {
-        "title": "Install some Kyma components",
+        "title": "Deploy hellow world function",
         "text": "install-kyma-components.md"
       }
     ],

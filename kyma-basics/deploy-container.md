@@ -1,7 +1,3 @@
-
-
-# Deploy hello world container
-
 In busola:
 - go to default namespace
 - click deploy new workload -> create deployment
