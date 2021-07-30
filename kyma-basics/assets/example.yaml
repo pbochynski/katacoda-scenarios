@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: go-hello
+  name: go-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-hello
+  template:
+    metadata:
+      labels:
+        app: go-hello
+    spec:
+      containers:
+      - image: pbochynski/go-hello:0.0.1
+        imagePullPolicy: Always
+        name: go-hello
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: go-hello
+  name: go-hello
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+  selector:
+    app: go-hello
+  type: ClusterIP
+---
+apiVersion: gateway.kyma-project.io/v1alpha1
+kind: APIRule
+metadata:
+  name: go-hello
+spec:
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
+  rules:
+  - accessStrategies:
+    - config: {}
+      handler: allow
+    methods: ["*"]
+    path: /.*
+  service:
+    host: go-hello
+    name: go-hello
+    port: 80
