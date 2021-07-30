@@ -1,7 +1,7 @@
 In busola:
 - go to default namespace
 - click deploy new workload -> create deployment
-- provide a name `hello` and the image `paulbouwer/hello-kubernetes:1.10`
+- provide a name `hello` and the image `paulbouwer/hello-kubernetes:1.10`{{copy}}
 - click `Create`
 
 

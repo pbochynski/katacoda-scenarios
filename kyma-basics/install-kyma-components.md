@@ -1,8 +1,4 @@
-Before you create your first function you need to:
-- configure your container registry
-- install serverless component
-
-# Configure your container registry (docker hub example)
+Before you create your first function you need to configure your container registry.
 
 Provide your container registry credentials as environment variables like in this example:
 ```
@@ -37,18 +33,6 @@ data:
  serverAddress: $(echo -n "${SERVER_ADDRESS}" | base64)
  registryAddress: $(echo -n "${REGISTRY_ADDRESS}" | base64)
 EOF
-```{{execute}}
-
-# Install serverless component
-
-Open a new terminal. 
-Checkout kyma repository, build kyma.js utility, and use it to install serverless component:
-```
-git clone https://github.com/kyma-project/kyma.git
-cd kyma/tests/fast-integration/
-npm install
-export DEBUG=true
-./kyma.js install --components serverless --use-helm-template
 ```{{execute}}
 
 # Create serverless function
@@ -95,7 +79,7 @@ spec:
 EOF
 ```{{execute}}
 
-Wait until the pod for building the function is in the state completed and function deployment is ready. Check the state with this command:
+Wait until the function status will become green (deployed). You can also watch the pods and deployments to track the progress of function build and deploy process:
 ```
 kubectl get pods
 kubectl get deployments
