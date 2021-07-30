@@ -109,4 +109,4 @@ Expose function on port 6000:
 kubectl port-forward --address '0.0.0.0' svc/test 6000:80
 ```{{execute}}
 
-Open [test function](https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com) in the browser.
+Open [test function](https://[[HOST_SUBDOMAIN]]-6000-[[KATACODA_HOST]].environments.katacoda.com) in the browser.
