@@ -1,5 +1,5 @@
 
-Please wait until you see the message **Kubernetes started** in the terminal.
+Please wait until you see the message **Kyma installed** in the terminal.
 
 Create alias `k` for `kubectl` and install autocompletion:
 ```
