@@ -16,6 +16,10 @@
       {
         "title": "Deploy hello world container",
         "text": "deploy-container.md"
+      },      
+      {
+        "title": "Install some Kyma components",
+        "text": "install-kyma-components.md"
       }
     ],
     "intro": {
