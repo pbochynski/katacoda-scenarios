@@ -11,7 +11,7 @@ launch.sh
 
 echo "Install Kyma components"
 export DEBUG=true
-./kyma.js install --components serverless --skip-componenents istio --use-helm-template
+./kyma.js install --components serverless --skip-components istio --use-helm-template
 
 
 
