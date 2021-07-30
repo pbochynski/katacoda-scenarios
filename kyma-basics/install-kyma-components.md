@@ -23,7 +23,6 @@ Create a secret for container registry credentials:
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
-type: kubernetes.io/dockerconfigjson
 metadata:
  name: serverless-registry-config
  namespace: default
@@ -39,7 +38,7 @@ EOF
 
 Install istio, api-gateway and serverless components from Kyma:
 ```
-./kyma.js install --components istio,api-gateway,serverless
+./kyma.js install --components istio,api-gateway,serverless --use-helm-template
 ```{{execute}}
 
 Go to busola and create function with a name test. Check when the deployment is in the state ready
