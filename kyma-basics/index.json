@@ -18,8 +18,8 @@
         "text": "deploy-container.md"
       },      
       {
-        "title": "Deploy hellow world function",
-        "text": "install-kyma-components.md"
+        "title": "Deploy hello world function",
+        "text": "deploy-function.md"
       }
     ],
     "intro": {

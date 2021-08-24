@@ -27,6 +27,6 @@ users:
 ```{{copy}}
 
 Open Kyma console (busola) in the new window:
-[https://dashboard.dev.kyma.cloud.sap/clusters/add](https://dashboard.dev.kyma.cloud.sap/clusters/add)
+[https://dashboard.kyma.cloud.sap/clusters/add](https://dashboard.kyma.cloud.sap/clusters/add)
 
 And paste the kubeconfig.
