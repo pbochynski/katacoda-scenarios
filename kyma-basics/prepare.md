@@ -29,6 +29,8 @@ serverless:
     enableInternal: false
     serverAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
     registryAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
+    username: ""
+    password: ""
 EOF
 ```{{execute}}
 
