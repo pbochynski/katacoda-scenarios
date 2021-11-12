@@ -1,11 +1,9 @@
-
 Execute the command:
 ```
 kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 ```{{execute}}
 
-On your local machine create a file `katacoda-kubeconfig.yaml`:
-
+On your local machine create kubeconfig file `katacoda-kubeconfig.yaml` and set KUBECONFIG env variable
 ```
 cat <<EOF >katacoda-kubeconfig.yaml
 apiVersion: v1
@@ -26,16 +24,13 @@ users:
   user:
     token: blahblah
 EOF
+
+export KUBECONFIG=$PWD/katacoda-kubeconfig.yaml
 ```{{copy}}
 
-
-
-and set KUBECONFIG env variable:
-```
-export KUBECONFIG=katacoda-kubeconfig.yaml
-```{{copy}}
+From now on you can also invoke `kubectl` commands from your local terminal.
 
 On your local machine open Kyma Dashboard:
 ```
 kyma dashboard
-```
+```{{copy}}
