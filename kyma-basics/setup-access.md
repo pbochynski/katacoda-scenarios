@@ -4,9 +4,10 @@ Execute the command:
 kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
 ```{{execute}}
 
-Copy the kubeconfig for your cluster:
+On your local machine create a file `katacoda-kubeconfig.yaml`:
 
 ```
+cat <<EOF >katacoda-kubeconfig.yaml
 apiVersion: v1
 clusters:
 - cluster:
@@ -24,9 +25,17 @@ users:
 - name: kubernetes-admin
   user:
     token: blahblah
+EOF
 ```{{copy}}
 
-Open Kyma console (busola) in the new window:
-[https://dashboard.kyma.cloud.sap/clusters/add](https://dashboard.kyma.cloud.sap/clusters/add)
 
-And paste the kubeconfig.
+
+and set KUBECONFIG env variable:
+```
+export KUBECONFIG=katacoda-kubeconfig.yaml
+```{{copy}}
+
+On your local machine open Kyma Dashboard:
+```
+kyma dashboard
+```

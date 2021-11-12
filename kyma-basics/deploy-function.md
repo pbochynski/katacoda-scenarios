@@ -85,9 +85,9 @@ kubectl get pods
 kubectl get deployments
 ```{{execute}}
 
-Expose function on port 6000:
+Expose function on port 5002:
 ```
-kubectl port-forward --address '0.0.0.0' svc/test 6000:80
+kubectl port-forward --address '0.0.0.0' svc/test 5002:80
 ```{{execute}}
 
-Open [test function](https://[[HOST_SUBDOMAIN]]-6000-[[KATACODA_HOST]].environments.katacoda.com) in the browser.
+Open [test function](https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com) in the browser.
