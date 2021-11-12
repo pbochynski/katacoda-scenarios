@@ -16,8 +16,6 @@ prerequisites:
   - name: "cluster-essentials"
   - name: "istio-configuration"
     namespace: "istio-system"
-  - name: "certificates"
-    namespace: "istio-system"
 components:
   - name: "serverless"
 EOF
@@ -38,5 +36,5 @@ EOF
 
 Install Kyma
 ```
-kyma deploy -p evaluation --c components.yaml -f values.yaml
+kyma deploy -p evaluation -c components.yaml -f values.yaml
 ```{{execute}}
