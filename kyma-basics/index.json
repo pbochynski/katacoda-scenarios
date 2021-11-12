@@ -4,6 +4,11 @@
   "difficulty": "Beginner",
   "time": "15",
   "details": {
+    "assets": {
+      "host01": [
+          {"file": "values.yaml", "target": "/root/"}
+      ]
+    }, 
     "steps": [
       {
         "title": "Prepare cluster",
