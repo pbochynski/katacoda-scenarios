@@ -14,8 +14,6 @@ cat <<EOF >components.yaml
 defaultNamespace: kyma-system
 prerequisites:
   - name: "cluster-essentials"
-  - name: "istio-configuration"
-    namespace: "istio-system"
 components:
   - name: "serverless"
 EOF
@@ -29,8 +27,8 @@ global:
 serverless:
   dockerRegistry:
     enableInternal: false
-    serverAddress: https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com
-    registryAddress: https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com
+    serverAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
+    registryAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
 EOF
 ```{{execute}}
 
