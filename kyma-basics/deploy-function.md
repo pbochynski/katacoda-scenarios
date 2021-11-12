@@ -1,43 +1,5 @@
-Before you create your first function, you need to configure your container registry.
 
-Provide your container registry credentials as environment variables like in this example:
-```
-export USERNAME=kyma-rocks
-export PASSWORD=admin123
-export SERVER_ADDRESS=https://index.docker.io/v1/
-export REGISTRY_ADDRESS=kyma-rocks
-```
-
-Generate docker config json (base64 encoded):
-```
-export DOCKERCONFIGJSON=$(kubectl create secret docker-registry tmp \
---docker-server=${SERVER_ADDRESS} --docker-username=${USERNAME} \
---docker-password=${PASSWORD} --dry-run=client -o jsonpath='{.data.\.dockerconfigjson}')
-```{{execute}}
-
-Create a secret for container registry credentials:
-```
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Secret
-type: kubernetes.io/dockerconfigjson
-metadata:
- name: serverless-registry-config
- namespace: default
- labels:
-   serverless.kyma-project.io/remote-registry: config
-data: 
- .dockerconfigjson: ${DOCKERCONFIGJSON}
- username: $(echo -n "${USERNAME}" | base64)
- password: $(echo -n "${PASSWORD}" | base64)
- serverAddress: $(echo -n "${SERVER_ADDRESS}" | base64)
- registryAddress: $(echo -n "${REGISTRY_ADDRESS}" | base64)
-EOF
-```{{execute}}
-
-# Create serverless function
-
-Go to [Busola](https://dashboard.kyma.cloud.sap/cluster/kyma-katacoda/namespaces/default/functions), expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
+Go to [Busola](https://localhost:3001/cluster/kyma-katacoda/namespaces/default/functions), expand Workloads section and select Functions (if you don't see it refresh the page in the browser - you just added serverless component second ago).
 Now create a new function with a name `test`. 
 If you don't want to use UI you can create function with kubectl:
 ```
