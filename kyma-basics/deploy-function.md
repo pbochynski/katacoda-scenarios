@@ -8,7 +8,7 @@ export SERVER_ADDRESS=https://index.docker.io/v1/
 export REGISTRY_ADDRESS=kyma-rocks
 ```
 
-Generate doocker config json (base64 encoded):
+Generate docker config json (base64 encoded):
 ```
 export DOCKERCONFIGJSON=$(kubectl create secret docker-registry tmp \
 --docker-server=${SERVER_ADDRESS} --docker-username=${USERNAME} \

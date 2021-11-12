@@ -1,17 +1,13 @@
+echo "Download Kyma CLI"
 
-echo "Clone Kyma repository"
-git clone https://github.com/kyma-project/kyma.git
+curl -Lo kyma https://storage.googleapis.com/kyma-cli-stable/kyma-linux
+chmod +x kyma
+mv kyma /usr/local/bin
 
-echo "Build kyma.js utility"
-cd kyma/tests/fast-integration/
-npm install
 
 echo "Wait for Kubernetes to be ready"
 launch.sh
 
-echo "Install Kyma components"
-export DEBUG=true
-./kyma.js install --components serverless --use-helm-template
 
 
 
