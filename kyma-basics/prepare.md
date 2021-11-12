@@ -27,8 +27,8 @@ global:
 serverless:
   dockerRegistry:
     enableInternal: false
-    serverAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
-    registryAddress: "https://[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
+    serverAddress: "[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
+    registryAddress: "[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
     username: ""
     password: ""
 EOF
