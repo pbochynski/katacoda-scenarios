@@ -23,12 +23,12 @@ Prepare configuration:
 ```
 cat <<EOF >values.yaml
 global:
-  domainName: {{TRAFFIC_HOST1_443}}
+  domainName: "${{{TRAFFIC_HOST1_443}}/https:\/\//}"
 serverless:
   dockerRegistry:
     enableInternal: false
-    serverAddress: "{{TRAFFIC_HOST1_5000}}"
-    registryAddress: "{{TRAFFIC_HOST1_5000}}"
+    serverAddress: "${{{TRAFFIC_HOST1_5000}}/https:\/\//}"
+    registryAddress: "${{{TRAFFIC_HOST1_5000}}/https:\/\//}"
     username: ""
     password: ""
 EOF

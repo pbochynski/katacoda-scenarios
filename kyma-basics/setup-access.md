@@ -9,7 +9,7 @@ cat <<EOF >katacoda-kubeconfig.yaml
 apiVersion: v1
 clusters:
 - cluster:
-    server: https://[[HOST_SUBDOMAIN]]-8001-[[KATACODA_HOST]].environments.katacoda.com
+    server: {{TRAFFIC_HOST1_443}}
   name: kyma-katacoda
 contexts:
 - context:

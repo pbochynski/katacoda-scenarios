@@ -39,17 +39,17 @@ spec:
       }
     }
 EOF
-```{{execute}}
+```{{exec}}
 
 Wait until the function status will become green (deployed). You can also watch the pods and deployments to track the progress of function build and deploy process:
 ```
 kubectl get pods
 kubectl get deployments
-```{{execute}}
+```{{exec}}
 
 Expose function on port 5002:
 ```
 kubectl port-forward --address '0.0.0.0' svc/test 5002:80
-```{{execute}}
+```{{exec}}
 
 Open [test function]({{TRAFFIC_HOST1_5002}}) in the browser.
