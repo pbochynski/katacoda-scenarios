@@ -6,7 +6,7 @@ Create alias `k` for `kubectl` and install autocompletion:
 source <(kubectl completion bash)
 alias k=kubectl
 source <(kubectl completion bash | sed s/kubectl/k/g)
-```{{execute}}
+```{{exec}}
 
 Prepare Kyma components yaml file. 
 ```
@@ -17,24 +17,24 @@ prerequisites:
 components:
   - name: "serverless"
 EOF
-```{{execute}}
+```{{exec}}
 
 Prepare configuration:
 ```
 cat <<EOF >values.yaml
 global:
-  domainName: [[HOST_SUBDOMAIN]]-443-[[KATACODA_HOST]].environments.katacoda.com
+  domainName: {{TRAFFIC_HOST1_443}}
 serverless:
   dockerRegistry:
     enableInternal: false
-    serverAddress: "[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
-    registryAddress: "[[HOST_SUBDOMAIN]]-5000-[[KATACODA_HOST]].environments.katacoda.com"
+    serverAddress: "{{TRAFFIC_HOST1_5000}}"
+    registryAddress: "{{TRAFFIC_HOST1_5000}}"
     username: ""
     password: ""
 EOF
-```{{execute}}
+```{{exec}}
 
 Install Kyma
 ```
 kyma deploy -p evaluation -c components.yaml -f values.yaml
-```{{execute}}
+```{{exec}}

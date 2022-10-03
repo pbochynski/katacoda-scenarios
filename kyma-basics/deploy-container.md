@@ -16,5 +16,5 @@ If you see the service hello execute this command to expose it:
 kubectl port-forward --address='0.0.0.0' svc/hello 5001:80
 ```{{execute}}
 
-Open the [hello world application](https://[[HOST_SUBDOMAIN]]-5001-[[KATACODA_HOST]].environments.katacoda.com)
+Open the [hello world application]({{TRAFFIC_HOST1_5001}})
 

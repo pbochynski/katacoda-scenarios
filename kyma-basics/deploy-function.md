@@ -52,4 +52,4 @@ Expose function on port 5002:
 kubectl port-forward --address '0.0.0.0' svc/test 5002:80
 ```{{execute}}
 
-Open [test function](https://[[HOST_SUBDOMAIN]]-5002-[[KATACODA_HOST]].environments.katacoda.com) in the browser.
+Open [test function]({{TRAFFIC_HOST1_5002}}) in the browser.
