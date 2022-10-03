@@ -19,16 +19,19 @@ components:
 EOF
 ```{{exec}}
 
+
 Prepare configuration:
 ```
+export REGISTRY_URL={{TRAFFIC_HOST1_5000}}
+export DOMAIN_URL={{TRAFFIC_HOST1_443}}
 cat <<EOF >values.yaml
 global:
-  domainName: "${{{TRAFFIC_HOST1_443}}/https:\/\//}"
+  domainName: "${DOMAIN_URL/https:\/\//}"
 serverless:
   dockerRegistry:
     enableInternal: false
-    serverAddress: "${{{TRAFFIC_HOST1_5000}}/https:\/\//}"
-    registryAddress: "${{{TRAFFIC_HOST1_5000}}/https:\/\//}"
+    serverAddress: "${REGISTRY_URL/https:\/\//}"
+    registryAddress: "${REGISTRY_URL/https:\/\//}"
     username: ""
     password: ""
 EOF
