@@ -6,6 +6,10 @@
   "details": {
     "steps": [
       {
+        "title": "Local registry",
+        "text": "local-registry.md"
+      },
+      {
         "title": "Prepare cluster",
         "text": "prepare.md"
       },
