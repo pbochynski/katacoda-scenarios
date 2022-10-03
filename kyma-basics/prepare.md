@@ -8,7 +8,7 @@ alias k=kubectl
 source <(kubectl completion bash | sed s/kubectl/k/g)
 ```{{execute}}
 
-Prepare Kyma components yaml file
+Prepare Kyma components yaml file. 
 ```
 cat <<EOF >components.yaml
 defaultNamespace: kyma-system

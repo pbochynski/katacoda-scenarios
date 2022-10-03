@@ -11,8 +11,6 @@ docker run -d \
 -v $PWD/registry:/var/lib/registry \
 eu.gcr.io/kyma-project/test-infra/docker-registry-2:20200202
 
-echo "Wait for Kubernetes to be ready"
-launch.sh
 
 
 
