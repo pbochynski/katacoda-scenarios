@@ -37,7 +37,8 @@ serverless:
 EOF
 ```{{exec}}
 
+
 Install Kyma
 ```
-kyma deploy -p evaluation -c components.yaml -f values.yaml
+kyma deploy -p evaluation -c components.yaml -f values.yaml -s PR-15698 
 ```{{exec}}
