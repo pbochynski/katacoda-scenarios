@@ -1,4 +1,6 @@
 echo "Download Kyma CLI"
-curl -Lo kyma https://storage.googleapis.com/kyma-cli-stable/kyma-linux
-chmod +x kyma
-mv kyma /usr/local/bin
+kubectl create ns istio-operator
+kubectl create ns busola
+kubectl apply -f istio.yaml
+kubectl apply -f busola.yaml
+
