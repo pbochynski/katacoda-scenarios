@@ -44,8 +44,9 @@ spec:
 EOF
 ```{{exec}}
 
+Open port for istio-ingressgateway: 
 ```
 kubectl port-forward --address=0.0.0.0 -n istio-system svc/istio-ingressgateway 5000:80
 ```{{exec}}
 
-Open this link: [{{TRAFFIC_HOST1_5000}}]({{TRAFFIC_HOST1_5000}}) 
+Do not stop the command and leave the tab open.

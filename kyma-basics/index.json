@@ -10,12 +10,12 @@
         "text": "busola.md"
       },
       {
-        "title": "Prepare cluster",
-        "text": "prepare.md"
+        "title": "Connect busola to the cluster",
+        "text": "setup-access.md"
       },
       {
-        "title": "Connect to the cluster with Kyma UI (Busola)",
-        "text": "setup-access.md"
+        "title": "Prepare cluster",
+        "text": "prepare.md"
       },
       {
         "title": "Deploy hello world container",
