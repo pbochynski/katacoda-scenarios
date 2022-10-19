@@ -1,5 +1,4 @@
 
-
 ```bash
 export REMOTE_URL={{TRAFFIC_HOST1_5000}}
 export DOMAIN=${REMOTE_URL/https:\/\//}
@@ -8,6 +7,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: busola-gateway
+  namespace: busola
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -23,6 +23,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: busola
+  namespace: busola
 spec:
   hosts:
     - $DOMAIN
