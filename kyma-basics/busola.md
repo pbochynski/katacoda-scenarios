@@ -1,11 +1,11 @@
 ```bash
-export REMOTE_URL={{TRAFFIC_HOST1_80}}
+export REMOTE_URL={{TRAFFIC_HOST1_5000}}
 export DOMAIN=${REMOTE_URL/https:\/\//}
 kubectl apply -f - <<EOF
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: kyma-gateway
+  name: busola-gateway
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -25,7 +25,7 @@ spec:
   hosts:
     - $DOMAIN
   gateways:
-    - kyma-system/kyma-gateway
+    - busola-gateway
   http:
     - name: 'backend-route'
       match:
@@ -40,3 +40,5 @@ spec:
             host: web.busola.svc.cluster.local
 EOF
 ```{{exec}}
+
+Open this link: [{{TRAFFIC_HOST1_5000}}]({{TRAFFIC_HOST1_5000}}) 
