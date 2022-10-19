@@ -28,7 +28,8 @@
     ],
     "assets": {
       "host01": [
-        {"file": "*.yaml", "target": "~/", "chmod": "+w"}
+        {"file": "busola.yaml", "target": "/my/location/busola.yaml", "chmod": "+w"},
+        {"file": "istio.yaml", "target": "~/istio.yaml", "chmod": "+w"}
       ]
     },
     "intro": {
