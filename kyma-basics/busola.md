@@ -1,3 +1,5 @@
+
+
 ```bash
 export REMOTE_URL={{TRAFFIC_HOST1_5000}}
 export DOMAIN=${REMOTE_URL/https:\/\//}
@@ -39,6 +41,10 @@ spec:
         - destination:
             host: web.busola.svc.cluster.local
 EOF
+```{{exec}}
+
+```
+kubectl port-forward --address=0.0.0.0 -n istio-system svc/istio-ingressgateway 5000:80
 ```{{exec}}
 
 Open this link: [{{TRAFFIC_HOST1_5000}}]({{TRAFFIC_HOST1_5000}}) 
