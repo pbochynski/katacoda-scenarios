@@ -22,7 +22,6 @@ users:
 - name: kubernetes-admin
   user:
     token: blahblah
-EOF
 ```{{copy}}
 
 And paste it in the [busola]({{TRAFFIC_HOST1_5000}})
