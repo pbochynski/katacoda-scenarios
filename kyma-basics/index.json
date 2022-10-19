@@ -26,6 +26,11 @@
         "text": "deploy-function.md"
       }
     ],
+    "assets": {
+      "host01": [
+        {"file": "*.yaml", "target": "~/", "chmod": "+w"}
+      ]
+    },
     "intro": {
       "text": "intro.md",
       "code": "kyma-init.sh"
