@@ -6,8 +6,8 @@
   "details": {
     "steps": [
       {
-        "title": "Local registry",
-        "text": "local-registry.md"
+        "title": "Busola",
+        "text": "busola.md"
       },
       {
         "title": "Prepare cluster",
