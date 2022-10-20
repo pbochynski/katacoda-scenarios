@@ -6,14 +6,6 @@
   "details": {
     "steps": [
       {
-        "title": "Busola",
-        "text": "busola.md"
-      },
-      {
-        "title": "Connect busola to the cluster",
-        "text": "setup-access.md"
-      },
-      {
         "title": "Prepare cluster",
         "text": "prepare.md"
       },
