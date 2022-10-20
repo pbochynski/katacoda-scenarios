@@ -6,7 +6,7 @@ kubectl create ns kyma-system
 kubectl apply -f istio-operator.yaml
 kubectl wait --for condition=established --timeout=60s crd/istiooperators.install.istio.io
 kubectl apply -f istio.yaml -n istio-system
-while [[ -z $(kubectl get svc -n istio-system istio-ingressgateway 2>/dev/null) ]]; do
+while [[ $(kubectl get pods -n istio-system -l app=istio-ingressgateway -o jsonpath='{..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do
   echo "Waiting for istio-ingressgateway (usually about 20-30s)"
   sleep 3
 done
