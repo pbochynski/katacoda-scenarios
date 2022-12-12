@@ -1,23 +1,28 @@
 
-Please wait until Kubernetes cluster is ready.
+Copy the kubeconfig below, open [Kyma Dashboard](https://dashboard.kyma.cloud.sap/), click on *Connect cluster* button and paste the kubeconfig file. 
 
-Create alias `k` for `kubectl` and install autocompletion:
 ```
-source <(kubectl completion bash)
-alias k=kubectl
-source <(kubectl completion bash | sed s/kubectl/k/g)
-```{{exec}}
+apiVersion: v1
+clusters:
+- cluster:
+    server: {{TRAFFIC_HOST1_8001}}
+  name: kyma-killercoda
+contexts:
+- context:
+    cluster: kyma-killercoda
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+kind: Config
+preferences: {}
+users:
+- name: kubernetes-admin
+  user:
+    token: blahblahblah
+```{{copy}}
 
-Prepare Kyma components yaml file. 
-```
-cat <<EOF >components.yaml
-defaultNamespace: kyma-system
-prerequisites:
-  - name: "cluster-essentials"
-components:
-  - name: "serverless"
-EOF
-```{{exec}}
+Now check if the istio-system namespace contains istio-ingressgateway pod. If it is there and the script in the terminal is executed, you can go to the next page.
+
 
 
 Prepare configuration:

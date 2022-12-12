@@ -1,0 +1,32 @@
+{
+  "title": "Modular Kyma",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "15",
+  "details": {
+    "steps": [
+      {
+        "title": "Prepare cluster",
+        "text": "prepare.md"
+      }
+    ],
+    "assets": {
+      "host01": [
+        {"file": "*.yaml", "target": "~/"}
+      ]
+    },
+    "intro": {
+      "text": "intro.md",
+      "code": "kyma-init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
