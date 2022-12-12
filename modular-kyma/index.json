@@ -18,9 +18,6 @@
     "intro": {
       "text": "intro.md",
       "code": "kyma-init.sh"
-    },
-    "finish": {
-      "text": "finish.md"
     }
   },
   "environment": {
