@@ -18,7 +18,7 @@ spec:
     apiVersion: install.istio.io/v1alpha1
     kind: IstioOperator
     metadata:
-      namespace: istio-system
+      namespace: kcp-system
       name: istiocontrolplane
     spec:
       profile: demo
@@ -33,7 +33,7 @@ spec:
         type: ociRegistry
       resources:
       - access:
-          digest: sha256:8b8e04913f1f1780d107e0ca76f2e2f15f3a582bfd79203d382ad643e212a79d
+          digest: sha256:5ad8c3f6d65aadaaaab993188b0f2a6dbda6b16cc5b6e1f3c3dc96cc83c38a67
           type: localOciBlob
         name: istio
         relation: local
