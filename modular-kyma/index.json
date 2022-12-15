@@ -16,6 +16,10 @@
       {
         "title": "Connect to cluster from Kyma Dashboard",
         "text": "setup-access.md"
+      },
+      {
+        "title": "Enable Keda module in Busola",
+        "text": "keda.md"
       }
     ],
     "assets": {
