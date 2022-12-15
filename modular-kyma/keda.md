@@ -1,9 +1,5 @@
 Open new terminal tab.
 
-Create keda module template:
-```
-kubectl apply -f keda-module.yaml
-```{{exec}}
 
 You can now enable that module in the Kyma Dashboard. Go to the namespace kcp-system, open Kyma resource (in the Kyma section), edit it and add Keda module. 
 

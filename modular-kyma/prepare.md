@@ -4,6 +4,19 @@ Play with kyma CLI command:
 kyma alpha deploy --ci
 ```{{exec}}
 
+Register available Kyma modules:
+
+```
+kubectl apply -f modules.yaml
+```
+
+Verify if you see 2 modules registered (istio, keda):
+```
+kubectl get moduletemplate -A
+```
+
+Assign cluster-admin role to module manager to be able to install any resource:
+
 ```sh
 cat <<EOF | kubectl apply -f - 
 apiVersion: rbac.authorization.k8s.io/v1
@@ -20,4 +33,3 @@ subjects:
   namespace: kcp-system
 EOF
 ```{{exec}}
-
