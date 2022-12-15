@@ -12,6 +12,10 @@
       {
         "title": "Enable istio",
         "text": "istio.md"
+      },
+      {
+        "title": "Connect to cluster from Kyma Dashboard",
+        "text": "setup-access.md"
       }
     ],
     "assets": {
