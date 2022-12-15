@@ -8,5 +8,4 @@ kubectl patch kyma default-kyma -n kcp-system --type='json' -p='[{"op": "add", "
 Wait 5 seconds and check if IstioOperator resource was created:
 ```
 kubectl get istiooperator -A
-```
-
+```{{exec}}
