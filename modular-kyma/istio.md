@@ -1,8 +1,8 @@
 Add istio to the module list in Kyma resource:
 
 ```
-kubectl patch kyma default-kyma -n kcp-system --type='json' -p='[{"op": "add", "path": "/spec/modules", "value": [{"name": "istio","channel":"regular" }] }]'
-
+kubectl patch kyma default-kyma -n kcp-system --type='json' \
+-p='[{"op": "add", "path": "/spec/modules", "value": [{"name": "istio","channel":"regular" }] }]'
 ```{{exec}}
 
 Wait 5 seconds and check if IstioOperator resource was created:
@@ -13,7 +13,7 @@ kubectl get istiooperator -A
 Check if istio is installed:
 ```
 kubectl get pods -A
-```
+```{{exec}}
 
 You should see something like this eventually (~20 seconds):
 ```
