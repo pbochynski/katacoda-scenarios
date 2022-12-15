@@ -24,4 +24,4 @@ users:
     token: tokentokentoken
 ```{{copy}}
 
-And paste it in the [busola]({{TRAFFIC_HOST1_5000}})
+And paste it in the [busola](https://dasboard.kyma.cloud.sap)
