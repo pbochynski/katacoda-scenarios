@@ -10,11 +10,6 @@ Register available Kyma modules:
 kubectl apply -f modules.yaml
 ```{{exec}}
 
-Verify if you see 2 modules registered (istio, keda):
-```
-kubectl get moduletemplate -A
-```{{exec}}
-
 Assign cluster-admin role to module manager to be able to install any resource:
 
 ```sh
