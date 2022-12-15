@@ -1,4 +1,4 @@
-Play with kyma CLI command:
+Deploy kyma lifecycle manager:
 
 ```
 kyma alpha deploy --ci
