@@ -5,6 +5,6 @@ You can now enable that module in the Kyma Dashboard. Go to the namespace kcp-sy
 
 If you prefer CLI you can enable Keda using this command:
 ```
-kubectl patch kyma default-kyma -n kcp-system --type='json' -p='[{"op": "add", "path": "/spec/modules", "value": [{"name": "keda" },{"name": "istio"}] }]'
+kubectl patch kyma default-kyma -n kcp-system --type='json' -p='[{"op": "add", "path": "/spec/modules/-", "value": {"name": "keda", "channel": "alpha" } }]'
 ```{{exec}}
 
