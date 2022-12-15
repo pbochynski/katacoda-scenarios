@@ -24,4 +24,4 @@ users:
     token: tokentokentoken
 ```{{copy}}
 
-And paste it in the [busola](https://dasboard.kyma.cloud.sap)
+And paste it in the [busola](https://dashboard.kyma.cloud.sap)
