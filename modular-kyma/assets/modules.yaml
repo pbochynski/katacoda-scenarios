@@ -33,7 +33,7 @@ spec:
         type: ociRegistry
       resources:
       - access:
-          digest: sha256:5ad8c3f6d65aadaaaab993188b0f2a6dbda6b16cc5b6e1f3c3dc96cc83c38a67
+          digest: sha256:d4cc98e2faf6f2e9df1f32ba1083dde7a701c35f49968566ecad94f24127b953
           type: localOciBlob
         name: istio
         relation: local
