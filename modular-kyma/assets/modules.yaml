@@ -156,7 +156,7 @@ spec:
         type: ociRegistry
       resources:
       - access:
-          digest: sha256:383f7aee6a4ea1aa11356187ae9017f3fc4340cf468b6f37f319519aedafa333
+          digest: sha256:6c880b344580c9b6b794d141cce7682d678540884386331ec638d4751439dc39
           type: localOciBlob
         name: cluster-ip
         relation: local
