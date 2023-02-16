@@ -121,3 +121,63 @@ spec:
       version: 0.0.1-a0e8648
     meta:
       schemaVersion: v2
+---
+apiVersion: operator.kyma-project.io/v1alpha1
+kind: ModuleTemplate
+metadata:
+  name: moduletemplate-cluster-ip
+  namespace: kcp-system
+  labels:
+    "operator.kyma-project.io/managed-by": "lifecycle-manager"
+    "operator.kyma-project.io/controller-name": "manifest"
+    "operator.kyma-project.io/module-name": "cluster-ip"
+  annotations:
+    "operator.kyma-project.io/module-version": "0.0.10"
+    "operator.kyma-project.io/module-provider": "internal"
+    "operator.kyma-project.io/descriptor-schema-version": "v2"
+spec:
+  target: control-plane
+  channel: regular
+  data:
+    apiVersion: operator.kyma-project.io/v1alpha1
+    kind: ClusterIP
+    metadata:
+      name: clusterip-nodes
+    spec:
+      nodeSpreadLabel: kubernetes.io/hostname
+  descriptor:
+    component:
+      componentReferences: []
+      name: kyma-project.io/cluster-ip
+      provider: internal
+      repositoryContexts:
+      - baseUrl: https://ghcr.io/pbochynski/cluster-ip-module
+        componentNameMapping: urlPath
+        type: ociRegistry
+      resources:
+      - access:
+          digest: sha256:383f7aee6a4ea1aa11356187ae9017f3fc4340cf468b6f37f319519aedafa333
+          type: localOciBlob
+        name: cluster-ip
+        relation: local
+        type: helm-chart
+        version: 0.0.10
+      - access:
+          digest: sha256:70b0d7ac5080db7a7110c22c04c9796e22b9f807e7b0b2ed07b1bcef58002aa4
+          type: localOciBlob
+        name: config
+        relation: local
+        type: yaml
+        version: 0.0.10
+      sources:
+      - access:
+          commit: f82a498a6ab892ad491f925542470e0376a5fedb
+          ref: refs/heads/main
+          repoUrl: github.com/kyma-project/cluster-ip
+          type: github
+        name: cluster-ip
+        type: git
+        version: 0.0.10
+      version: 0.0.10
+    meta:
+      schemaVersion: v2
