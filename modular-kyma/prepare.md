@@ -10,7 +10,7 @@ Register available Kyma modules:
 kubectl apply -f modules.yaml
 ```{{exec}}
 
-Assign cluster-admin role to module manager to be able to install any resource:
+Assign cluster-admin role to lifecycle manager to be able to install any resource:
 
 ```sh
 cat <<EOF | kubectl apply -f - 
@@ -24,7 +24,7 @@ roleRef:
   name: cluster-admin
 subjects:
 - kind: ServiceAccount
-  name: module-manager-manager
+  name: lifecycle-manager-controller-manager
   namespace: kcp-system
 EOF
 ```{{exec}}
