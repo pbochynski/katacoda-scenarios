@@ -44,5 +44,5 @@ kubectl patch kyma default-kyma -n kyma-system --type='json' \
 
 Check installation status:
 ```
- kubectl get manifest -n kyma-system -oyaml
+kubectl get manifest -n kyma-system -oyaml
 ```{{exec}}
