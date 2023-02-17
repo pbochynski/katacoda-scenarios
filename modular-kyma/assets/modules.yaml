@@ -74,7 +74,7 @@ metadata:
     "operator.kyma-project.io/descriptor-schema-version": "v2"
 spec:
   target: control-plane
-  channel: alpha
+  channel: beta
   data:
     apiVersion: operator.kyma-project.io/v1alpha1
     kind: Keda
@@ -132,12 +132,12 @@ metadata:
     "operator.kyma-project.io/controller-name": "manifest"
     "operator.kyma-project.io/module-name": "cluster-ip"
   annotations:
-    "operator.kyma-project.io/module-version": "0.0.10"
+    "operator.kyma-project.io/module-version": "0.0.11"
     "operator.kyma-project.io/module-provider": "internal"
     "operator.kyma-project.io/descriptor-schema-version": "v2"
 spec:
   target: control-plane
-  channel: regular
+  channel: beta
   data:
     apiVersion: operator.kyma-project.io/v1alpha1
     kind: ClusterIP
@@ -151,33 +151,33 @@ spec:
       name: kyma-project.io/cluster-ip
       provider: internal
       repositoryContexts:
-      - baseUrl: https://ghcr.io/pbochynski/cluster-ip-module
+      - baseUrl: ghcr.io/pbochynski/cluster-ip-module
         componentNameMapping: urlPath
         type: ociRegistry
       resources:
       - access:
-          digest: sha256:6c880b344580c9b6b794d141cce7682d678540884386331ec638d4751439dc39
+          digest: sha256:ddf299af82b8fe9cdfe4a6bb54c4c859de967ea81066ea18f6e598d74189d6fe
           type: localOciBlob
         name: cluster-ip
         relation: local
         type: helm-chart
-        version: 0.0.10
+        version: 0.0.11
       - access:
           digest: sha256:70b0d7ac5080db7a7110c22c04c9796e22b9f807e7b0b2ed07b1bcef58002aa4
           type: localOciBlob
         name: config
         relation: local
         type: yaml
-        version: 0.0.10
+        version: 0.0.11
       sources:
       - access:
-          commit: f82a498a6ab892ad491f925542470e0376a5fedb
+          commit: 6f40ce2b82cf2a7fcb20be8dcf417adc6794e1f0
           ref: refs/heads/main
           repoUrl: github.com/kyma-project/cluster-ip
           type: github
         name: cluster-ip
         type: git
-        version: 0.0.10
-      version: 0.0.10
+        version: 0.0.11
+      version: 0.0.11
     meta:
       schemaVersion: v2

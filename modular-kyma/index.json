@@ -18,8 +18,8 @@
         "text": "setup-access.md"
       },
       {
-        "title": "Enable Keda module in Busola",
-        "text": "keda.md"
+        "title": "Enable other modules",
+        "text": "modules.md"
       }
     ],
     "assets": {
