@@ -1,0 +1,24 @@
+{
+  "title": "Cluster-IP",
+  "description": "",
+  "difficulty": "Beginner",
+  "time": "5",
+  "details": {
+    "steps": [
+      {
+        "title": "Deploy as Kyma module",
+        "text": "cluster-ip-kyma.md"
+      },
+      {
+        "title": "Deploy cluster-ip with kubectl",
+        "text": "cluster-ip.md"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

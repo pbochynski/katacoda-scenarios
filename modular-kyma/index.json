@@ -10,10 +10,6 @@
         "text": "prepare.md"
       },
       {
-        "title": "Enable cluster-ip",
-        "text": "cluster-ip.md"
-      },
-      {
         "title": "Enable istio",
         "text": "istio.md"
       },
