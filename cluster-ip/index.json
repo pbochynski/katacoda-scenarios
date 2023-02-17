@@ -8,7 +8,7 @@
       {
         "title": "cluster-ip",
         "text": "cluster-ip.md",
-        "code": "init.sh"
+        "foreground": "init.sh"
       }
     ]
   },
