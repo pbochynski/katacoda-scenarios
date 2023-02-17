@@ -17,4 +17,5 @@ subjects:
   name: lifecycle-manager-controller-manager
   namespace: kcp-system
 EOF
+kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
 echo "Kyma Control Plane is ready. Go to next step."
