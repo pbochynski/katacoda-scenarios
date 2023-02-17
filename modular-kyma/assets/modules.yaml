@@ -132,7 +132,7 @@ metadata:
     "operator.kyma-project.io/controller-name": "manifest"
     "operator.kyma-project.io/module-name": "cluster-ip"
   annotations:
-    "operator.kyma-project.io/module-version": "0.0.11"
+    "operator.kyma-project.io/module-version": "0.0.12"
     "operator.kyma-project.io/module-provider": "internal"
     "operator.kyma-project.io/descriptor-schema-version": "v2"
 spec:
@@ -156,19 +156,19 @@ spec:
         type: ociRegistry
       resources:
       - access:
-          digest: sha256:ddf299af82b8fe9cdfe4a6bb54c4c859de967ea81066ea18f6e598d74189d6fe
+          digest: sha256:01b5d203df6276cc382dcf5d482208f1aae5be53a3da124f5af0eefc74ba1244
           type: localOciBlob
         name: cluster-ip
         relation: local
         type: helm-chart
-        version: 0.0.11
+        version: 0.0.12
       - access:
           digest: sha256:70b0d7ac5080db7a7110c22c04c9796e22b9f807e7b0b2ed07b1bcef58002aa4
           type: localOciBlob
         name: config
         relation: local
         type: yaml
-        version: 0.0.11
+        version: 0.0.12
       sources:
       - access:
           commit: 6f40ce2b82cf2a7fcb20be8dcf417adc6794e1f0
@@ -177,7 +177,7 @@ spec:
           type: github
         name: cluster-ip
         type: git
-        version: 0.0.11
-      version: 0.0.11
+        version: 0.0.12
+      version: 0.0.12
     meta:
       schemaVersion: v2

@@ -6,10 +6,6 @@
   "details": {
     "steps": [
       {
-        "title": "Prepare cluster",
-        "text": "prepare.md"
-      },
-      {
         "title": "Enable istio",
         "text": "istio.md"
       },
