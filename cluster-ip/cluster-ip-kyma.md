@@ -1,6 +1,3 @@
-|WARNING: Kyma module doesn't work yet - there are some not resolved issues, skip to the next step|
-|---|
-
 Download the latest Kyma CLI:
 ```
 curl -Lo kyma https://storage.googleapis.com/kyma-cli-unstable/kyma-linux # kyma-darwin, kyma-linux-arm, kyma.exe, or kyma-arm.exe
