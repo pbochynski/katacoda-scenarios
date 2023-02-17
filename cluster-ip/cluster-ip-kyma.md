@@ -42,4 +42,7 @@ kubectl patch kyma default-kyma -n kyma-system --type='json' \
 -p='[{"op": "add", "path": "/spec/modules", "value": [{"name": "cluster-ip","channel":"regular" }] }]'
 ```{{exec}}
 
-
+Check installation status:
+```
+ kubectl get manifest -n kyma-system -oyaml
+```{{exec}}
