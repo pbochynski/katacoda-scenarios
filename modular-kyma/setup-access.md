@@ -1,6 +1,6 @@
-In the new tab execute the command:
+Open proxy to the kubernetes API server in the background:
 ```
-kubectl proxy --address='0.0.0.0' --accept-hosts='.*'
+kubectl proxy --address='0.0.0.0' --accept-hosts='.*' &
 ```{{execute}}
 
 Copy the kubeconfig:
