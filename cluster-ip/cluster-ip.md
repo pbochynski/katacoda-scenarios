@@ -1,7 +1,7 @@
 Install cluster-ip operator:
 ```
 kubectl apply -f https://raw.githubusercontent.com/pbochynski/cluster-ip/main/cluster-ip-operator.yaml
-```
+```{{exec}}
 
 Create a resource:
 ```yaml

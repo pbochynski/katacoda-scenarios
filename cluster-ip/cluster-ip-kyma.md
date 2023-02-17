@@ -3,7 +3,7 @@
 
 Download the latest Kyma CLI:
 ```
-curl -Lo kyma https://storage.googleapis.com/kyma-cli-unstable/kyma-darwin # kyma-linux, kyma-linux-arm, kyma.exe, or kyma-arm.exe
+curl -Lo kyma https://storage.googleapis.com/kyma-cli-unstable/kyma-linux # kyma-darwin, kyma-linux-arm, kyma.exe, or kyma-arm.exe
 chmod +x kyma
 mv kyma /usr/local/bin
 ```{{exec}}
