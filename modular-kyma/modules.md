@@ -9,3 +9,8 @@ and `cluster-ip` module using this command:
 ```
 kubectl patch kyma default-kyma -n kyma-system --type='json' -p='[{"op": "add", "path": "/spec/modules/-", "value": {"name": "cluster-ip", "channel": "beta" } }]'
 ```{{exec}}
+
+Now you can verify if cluster IP is already available:
+```
+kubectl get clusterip -n kyma-system clusterip-nodes -oyaml
+```{{exec}}
