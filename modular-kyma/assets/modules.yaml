@@ -2,7 +2,7 @@ apiVersion: operator.kyma-project.io/v1alpha1
 kind: ModuleTemplate
 metadata:
   name: moduletemplate-istio
-  namespace: kcp-system
+  namespace: kyma-system
   labels:
     "operator.kyma-project.io/managed-by": "lifecycle-manager"
     "operator.kyma-project.io/controller-name": "manifest"
@@ -63,7 +63,7 @@ apiVersion: operator.kyma-project.io/v1alpha1
 kind: ModuleTemplate
 metadata:
   name: moduletemplate-keda
-  namespace: kcp-system
+  namespace: kyma-system
   labels:
     "operator.kyma-project.io/managed-by": "lifecycle-manager"
     "operator.kyma-project.io/controller-name": "manifest"
@@ -126,7 +126,7 @@ apiVersion: operator.kyma-project.io/v1alpha1
 kind: ModuleTemplate
 metadata:
   name: moduletemplate-cluster-ip
-  namespace: kcp-system
+  namespace: kyma-system
   labels:
     "operator.kyma-project.io/managed-by": "lifecycle-manager"
     "operator.kyma-project.io/controller-name": "manifest"
