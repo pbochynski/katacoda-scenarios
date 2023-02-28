@@ -9,6 +9,10 @@
         "title": "cluster-ip",
         "text": "cluster-ip.md",
         "foreground": "init.sh"
+      },
+      {
+        "title": "kubeconfig for Kyma Dashboard",
+        "text": "setup-access.md"
       }
     ]
   },
